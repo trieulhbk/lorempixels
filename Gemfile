@@ -7,7 +7,11 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly', '~>0.9.15'
+# gem 'dragonfly', '~>0.9.15'
+gem 'carrierwave'
+gem 'rmagick'
+gem "mini_magick"
+gem 'pry'
 
 # Gems used only for assets and not required
 # in production environments by default.

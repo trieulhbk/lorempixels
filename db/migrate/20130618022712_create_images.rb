@@ -5,6 +5,7 @@ class CreateImages < ActiveRecord::Migration
       t.integer :category_id
       t.integer :width
       t.integer :height
+      t.string :image_uid
 
       t.timestamps
     end
