@@ -9,6 +9,11 @@
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
+/db/database.yml
+
+Gemfile.lock
+
+/tmp/*
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -29,3 +34,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
