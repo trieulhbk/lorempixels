@@ -9,13 +9,13 @@ get /\/(.+)/ do
 
   width = (p.empty? ? 0 : i = p.shift).to_i > 1920 ? 0 : i.to_i
   height = (p.empty? ? 0 : i = p.shift).to_i > 1920 ? 0 : i.to_i
-  category = p.empty? ? rand(0..13) : p.shift
+  category = Dir["public/*"].index((p.empty? ? Dir["public/*"].shuffle.first : i = p.shift)).nil? ? 0 : i
 
   status 200
 
   src = Dir["public/#{category}/*"].shuffle.first
 
-  if !src.nil? && width*height > 0
+  if !src.nil? && width*height*category > 0
     headers "Content-Type" => "image/jpeg"
     image = Magick::Image.read(src).first
     @img = image.resize_to_fill(width,height)
